@@ -23,11 +23,11 @@
 @layer base {
 
     * {
-        @apply m-0 p-0 box-border antialiased font-Montserrat;
+        @apply m-0 p-0 box-border antialiased font-Montserrat cursor-none;
     }
 
     body {
-        @apply transition-all duration-300 dark:bg-dark dark:text-gray-50;
+        @apply w-screen overflow-x-hidden transition-all duration-300 dark:bg-dark dark:text-gray-50;
     }
 
     img {
@@ -67,20 +67,20 @@
     }
     #home_hero_img_div::before{
         content: "";
-        @apply absolute md:-inset-10 inset-0 border-dashed dark:border-gray-500 md:border-2 border rounded-full z-0
+        @apply absolute -inset-10 border-dashed dark:border-gray-500 md:border-2 border rounded-full z-0
     }
     #home_hero_img_div::after{
         content: "";
-        @apply absolute md:inset-8 inset-7 border-dashed dark:border-gray-500 md:border-2 border rounded-full z-0
+        @apply absolute inset-5 border-dashed dark:border-gray-500 md:border-2 border rounded-full z-0
     }
     .tech_orbit{
         @apply z-[1] flex absolute
     }
     .tech_orbit.inner{
-        @apply animate-spin md:inset-2 inset-4 animation-delay-1000 animation-duration-50s
+        @apply animate-spin -inset-2 animation-delay-1000 animation-duration-50s
     }
     .tech_orbit.outer{
-        @apply animate-spin inset-8 animation-delay-1000 animation-duration-50s animation-reverse
+        @apply animate-spin inset-4 animation-delay-1000 animation-duration-50s animation-reverse
     }
     .tech_orbit.inner>img{
         @apply animate-spin animation-delay-1000 animation-duration-50s animation-reverse
@@ -93,6 +93,13 @@
     }
     .home_hero_img::after{
         content:"";
-        @apply absolute rounded-full inset-10 -z-[1] bg-primary opacity-75 animate-ping animation-duration-2s;
+        @apply absolute rounded-full inset-10 -z-[1] bg-primary opacity-75 animate-ping animation-duration-2s
     }
+    .technologies_tags_container:hover span{
+        @apply opacity-50
+    }
+    .technologies_tags_container span{
+        @apply px-3 py-2 rounded-lg font-medium text-white bg-primary hover:opacity-100 transition-all
+    }
+    
 }
