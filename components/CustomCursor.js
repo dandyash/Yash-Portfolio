@@ -1,18 +1,15 @@
 import useMousePosition from "../hooks/useMousePosition"
+import { useContext } from 'react';
+import CustomCursorContext from "../context/CustomCursorContext";
 
 const CustomCursor = () => {
     const { x, y } = useMousePosition();
+    const { isLinkHover } = useContext(CustomCursorContext);
     return (
-        <div className="cursor pointer-events-none z-[99]" >
-            <div className="follow_cursor fixed w-[48px] rounded-full aspect-square -translate-x-1/2 -translate-y-1/2 bg-primary bg-opacity-50 ease-in duration-100" style={{
-                top: `${y}px`,
-                left: `${x}px`
-            }}></div>
-            <div className="fixed w-[22px] rounded-full aspect-square -translate-x-1/2 -translate-y-1/2 bg-primary" style={{
-                top: `${y}px`,
-                left: `${x}px`
-            }}></div>
-        </div>
+        <div className={`pointer-events-none z-[99] fixed rounded-full aspect-square -translate-x-1/2 -translate-y-1/2  transition-[width,background-color] bg-primary ${isLinkHover ? "w-[75px] bg-transparent border-primary border-[3px]" : "w-[25px]"}`} style={{
+            top: `${y}px`,
+            left: `${x}px`
+        }}></div>
     )
 }
 

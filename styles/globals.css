@@ -50,6 +50,11 @@
         @apply max-w-7xl mx-auto px-5;
     }
 
+    #main_header::after{
+        content: "";
+        @apply absolute inset-0 backdrop-blur-md -z-10;
+    }
+
     .header_nav>li>a {
         @apply font-semibold text-xl leading-none relative ;
     }
@@ -99,7 +104,7 @@
         @apply opacity-50
     }
     .technologies_tags_container span{
-        @apply px-3 py-2 rounded-lg font-medium text-white bg-primary hover:opacity-100 transition-all
+        @apply px-3 py-2 rounded-lg font-semibold border-[2px] border-primary backdrop-blur-md hover:opacity-100 transition-all
     }
     
 }

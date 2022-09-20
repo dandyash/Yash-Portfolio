@@ -27,7 +27,7 @@ const Header = () => {
 
 
     return (
-        <header id='main_header' className='py-1 fixed inset-x-0 top-0 backdrop-blur-md z-50 dark:shadow-black/50'>
+        <header id='main_header' className='py-1 fixed inset-x-0 top-0 z-50 bg-transparent dark:shadow-black/50'>
             <div className="wrapper">
                 <div className="flex items-center justify-between">
                     <div className="">

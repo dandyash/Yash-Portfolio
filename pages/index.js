@@ -3,8 +3,11 @@
 // import Image from 'next/image';
 import TypewriterComponent from "typewriter-effect"
 import { Fade, Slide } from "react-awesome-reveal"
+import CustomCursorContext from "../context/CustomCursorContext"
+import { useContext } from "react"
 
 export default function Home() {
+    const { setIsLinkHover } = useContext(CustomCursorContext)
     return (
         <div className="">
             <div className="wrapper">
@@ -16,8 +19,8 @@ export default function Home() {
                     <div className="md:w-full flex flex-col gap-5">
                         <Slide direction="left" cascade damping={0.25} triggerOnce>
                             <h1 className="text-7xl">Hey, </h1>
-                            <h2 className="text-7xl">I&apos;m Yash</h2>
-                            <h2 className="text-7xl font-semibold text-primary">
+                            <h2 className="text-7xl" >I&apos;m Yash</h2>
+                            <h2 className="text-7xl font-semibold text-primary" onMouseOver={() => setIsLinkHover(true)} onMouseOut={() => setIsLinkHover(false)}>
                                 <TypewriterComponent options={{
                                     strings: ['Full Stack Developer', 'UI/UX Developer', 'Programmer', 'Software Developer'],
                                     autoStart: true,
@@ -102,7 +105,7 @@ export default function Home() {
 
                     <div className="md:w-3/5 flex flex-col gap-10 pl-40">
                         <Fade cascade damping={0.25} triggerOnce>
-                            <h2 className="text-7xl">Technologies I work with.</h2>
+                            <h2 className="text-7xl font-medium text-primary" onMouseOver={() => setIsLinkHover(true)} onMouseOut={() => setIsLinkHover(false)}>Technologies I work with.</h2>
                             <div className="technologies_tags_container flex items-center gap-x-3 gap-y-6 flex-wrap">
                                 <Fade cascade damping={0.25} triggerOnce>
                                     <span>HTML / HTML 5</span>
