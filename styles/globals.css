@@ -23,7 +23,7 @@
 @layer base {
 
     * {
-        @apply m-0 p-0 box-border antialiased font-Montserrat cursor-none;
+        @apply m-0 p-0 box-border antialiased font-Montserrat;
     }
 
     body {
@@ -43,7 +43,7 @@
     }
 
     ::selection{
-        @apply bg-primary text-white
+        @apply bg-transparent
     }
 
     .wrapper {

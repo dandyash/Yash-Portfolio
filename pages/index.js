@@ -3,11 +3,8 @@
 // import Image from 'next/image';
 import TypewriterComponent from "typewriter-effect"
 import { Fade, Slide } from "react-awesome-reveal"
-import CustomCursorContext from "../context/CustomCursorContext"
-import { useContext } from "react"
 
 export default function Home() {
-    const { setIsLinkHover } = useContext(CustomCursorContext)
     return (
         <div className="">
             <div className="wrapper">
@@ -20,16 +17,22 @@ export default function Home() {
                         <Slide direction="left" cascade damping={0.25} triggerOnce>
                             <h1 className="text-5xl">Hi, </h1>
                             <h2 className="text-7xl" >I&apos;m <span className="font-medium text-primary">Yash</span></h2>
-                            <h2 className="text-5xl opacity-75 font-medium" onMouseOver={() => setIsLinkHover(true)} onMouseOut={() => setIsLinkHover(false)}>
+                            <h2 className="text-5xl text-primary opacity-75 font-medium">
                                 <TypewriterComponent options={{
-                                    strings: ['Full Stack Developer', 'UI/UX Developer', 'Software Engineer'],
+                                    strings: ['Full Stack Developer', 'Software Engineer', 'UI/UX Developer'],
                                     autoStart: true,
                                     loop: true,
+                                    wrapperClassName: "text-black dark:text-gray-50 "
                                 }} />
                             </h2>
                             {/* <p className="text-xl">Hi, I&apos;m Yash a Full-Stack Web Developer from India.<br />I help brands transform their ideas into high quality products</p> */}
                             {/* Hero Social Links Section Start */}
                             <div className="hero_socials flex items-center gap-5 pt-5">
+                                <a href="mailto:dandyash0502@gmail.com" target="_blank" rel="noreferrer">
+                                    <svg width="30px" height="30px" fill="currentcolor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.574 5.286l7.5 4.029c.252.135.578.199.906.199.328 0 .654-.064.906-.199l7.5-4.029c.489-.263.951-1.286.054-1.286H1.521c-.897 0-.435 1.023.053 1.286zm17.039 2.203l-7.727 4.027c-.34.178-.578.199-.906.199s-.566-.021-.906-.199-7.133-3.739-7.688-4.028C.996 7.284 1 7.523 1 7.707V15c0 .42.566 1 1 1h16c.434 0 1-.58 1-1V7.708c0-.184.004-.423-.387-.219z" />
+                                    </svg>
+                                </a>
                                 <a href="https://www.linkedin.com/in/yash-dand-718a411b9/" target="_blank" rel="noreferrer">
                                     <svg width="30px" height="30px" fill="currentcolor" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M27.26 27.271h-4.733v-7.427c0-1.771-0.037-4.047-2.475-4.047-2.468 0-2.844 1.921-2.844 3.916v7.557h-4.739v-15.271h4.552v2.083h0.061c0.636-1.203 2.183-2.468 4.491-2.468 4.801 0 5.692 3.161 5.692 7.271v8.385zM7.115 9.912c-1.527 0-2.751-1.235-2.751-2.756 0-1.516 1.229-2.749 2.751-2.749s2.755 1.233 2.755 2.749c0 1.521-1.233 2.756-2.755 2.756zM9.489 27.271h-4.749v-15.271h4.749zM29.636 0h-27.276c-1.303 0-2.36 1.031-2.36 2.307v27.387c0 1.276 1.057 2.307 2.36 2.307h27.271c1.301 0 2.369-1.031 2.369-2.307v-27.387c0-1.276-1.068-2.307-2.369-2.307z" />
@@ -104,7 +107,7 @@ export default function Home() {
                         </div>
                     </Slide>
 
-                    <div className="md:w-3/5 flex flex-col gap-10 pl-40">
+                    <div className="md:w-3/5 flex flex-col gap-10 pl-36">
                         <Fade cascade damping={0.25} triggerOnce>
                             <h2 className="text-7xl font-medium text-primary">Technologies I work with.</h2>
                             <div className="technologies_tags_container flex items-center gap-x-3 gap-y-6 flex-wrap">
