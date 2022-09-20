@@ -18,11 +18,11 @@ export default function Home() {
                     {/* Hero Description Section Start */}
                     <div className="md:w-full flex flex-col gap-5">
                         <Slide direction="left" cascade damping={0.25} triggerOnce>
-                            <h1 className="text-7xl">Hey, </h1>
-                            <h2 className="text-7xl" >I&apos;m Yash</h2>
-                            <h2 className="text-7xl font-semibold text-primary" onMouseOver={() => setIsLinkHover(true)} onMouseOut={() => setIsLinkHover(false)}>
+                            <h1 className="text-5xl">Hi, </h1>
+                            <h2 className="text-7xl" >I&apos;m <span className="font-medium text-primary">Yash</span></h2>
+                            <h2 className="text-5xl opacity-75 font-medium" onMouseOver={() => setIsLinkHover(true)} onMouseOut={() => setIsLinkHover(false)}>
                                 <TypewriterComponent options={{
-                                    strings: ['Full Stack Developer', 'UI/UX Developer', 'Programmer', 'Software Developer'],
+                                    strings: ['Full Stack Developer', 'UI/UX Developer', 'Software Engineer'],
                                     autoStart: true,
                                     loop: true,
                                 }} />
@@ -55,6 +55,7 @@ export default function Home() {
                         <div className="aspect-square relative flex items-center justify-center" id='home_hero_img_div'>
                             {/* Center Profile Image */}
                             <div className="home_hero_img relative w-4/6 aspect-square border-dashed dark:border-gray-500 md:border-2 border rounded-full">
+                                <img src="/images/profile.jpg" alt="" className="rounded-full" />
                             </div>
                             {/* Orbit Component Start */}
 
@@ -105,7 +106,7 @@ export default function Home() {
 
                     <div className="md:w-3/5 flex flex-col gap-10 pl-40">
                         <Fade cascade damping={0.25} triggerOnce>
-                            <h2 className="text-7xl font-medium text-primary" onMouseOver={() => setIsLinkHover(true)} onMouseOut={() => setIsLinkHover(false)}>Technologies I work with.</h2>
+                            <h2 className="text-7xl font-medium text-primary">Technologies I work with.</h2>
                             <div className="technologies_tags_container flex items-center gap-x-3 gap-y-6 flex-wrap">
                                 <Fade cascade damping={0.25} triggerOnce>
                                     <span>HTML / HTML 5</span>
@@ -131,6 +132,16 @@ export default function Home() {
                     </div>
                 </div>
                 {/* Technology Section End */}
+
+                {/* Portfolio Section Start */}
+                <div className="flex  items-center">
+                    <div className="md:w-1/2 flex flex-col gap-10 pt-5">
+                        <Fade cascade damping={0.25} triggerOnce>
+                            <h2 className="text-7xl font-medium text-primary"></h2>
+                        </Fade>
+                    </div>
+                </div>
+                {/* Portfolio Section End */}
 
             </div>
         </div>
